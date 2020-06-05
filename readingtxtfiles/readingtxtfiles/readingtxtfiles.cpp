@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+    //version 2
     int int_1, int_2, int_3, int_4, int_5;
     int i = 0;
     double double_1, double_2;
