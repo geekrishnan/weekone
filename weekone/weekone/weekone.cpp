@@ -172,11 +172,11 @@ void weekone::appendmyfile(string filelocation)
 
 void weekone::createnewfile()
 {
-	ofstream file("newfile.txt", ios_base::in);
+	ofstream file("newfile.txt", ios_base::out);
 
 	if (file.is_open())
 	{
-		file << "creating a new file";
+		file << "creating a new file" << '\n';
 		file.close();
 		cout << "file has been created" << '\n';
 	}
