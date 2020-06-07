@@ -20,8 +20,21 @@ int main()
     char eol;
     string sister[10];
     string myname; //object
+    string location; 
 
-    ifstream  myfile("C:\\Users\\gowri\\Documents\\SampleTxt.txt", ifstream::in);
+    ifstream myfile; 
+
+    cout << "enter file name/location or type defult for the default file"<<'\n'; 
+    cin >> location; 
+    if (location.compare("default") == 0)
+    {
+      myfile.open("C:\\Users\\gowri\\Documents\\SampleTxt.txt", ifstream::in);
+    }
+    else
+    {
+      myfile.open(location, ifstream::in);
+    }
+   
 
     if (myfile.is_open())
     {
@@ -70,10 +83,16 @@ int main()
 
         //appending to a text file
         ofstream outfile;
-
-        outfile.open("output.txt", ios_base::app);
-        outfile << "Data";
-        outfile.close();
+        if (outfile.is_open())
+        {
+            outfile.open("output.txt", ios_base::app);
+            outfile << "Datalkdfj;kajdf";
+            outfile.close();
+        }
+        else
+        {
+            cout << "file failed to open, user may have .txt open";
+        }
 
         //overwriting a file
         ofstream outf;
